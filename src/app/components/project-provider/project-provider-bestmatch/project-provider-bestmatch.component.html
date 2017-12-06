@@ -1,0 +1,83 @@
+<div class="card-header">
+  <h1 class="title"><i class="fa fa-address-card" aria-hidden="true"></i> Best Match Students</h1>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/project-provider-request" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Go Back</a>
+  </div>
+</div>
+<br>
+
+<div  role="tablist"  [attr.id]="'accordion_' + i" *ngFor="let studentData of matchedStudent; let i = index" aria-multiselectable="true" >
+
+  <div class="card" >
+    <div class="card-header card-data bg-info"  role="tab" id="questionOne" >
+      <h5 class="card-title">
+        <a  class="name" data-toggle="collapse"  [attr.data-parent]="'#accordion_' + i"  [attr.href]="'#collapseOne_' + i" aria-expanded="false" aria-controls="answerOne">
+{{studentData.firstName}} {{studentData.lastName}}
+</a>
+      </h5>
+    </div>
+    <div [attr.id]="'collapseOne_' + i" class="collapse card-data" role="tabcard" aria-labelledby="questionOne">
+      <div class="card-body">
+        <h4 class="text-danger">
+          <b>{{studentData.projectName}}</b>
+        </h4>
+        <br>
+        <table>
+          <tr class="table-success">
+            <td>
+              <h5><b>Major</b></h5>
+              <h6> {{studentData.major}}</h6>
+            </td>
+            <td>
+              <h5><b>Skills</b></h5>
+              <h6> {{studentData.skill_1}}, {{studentData.skill_2}}, {{studentData.skill_3}}, {{studentData.skill_4}}</h6>
+            </td>
+            <td>
+              <h5><b>Education Status</b></h5>
+              <h6> {{studentData.educationStatus}} </h6>
+            </td>
+          </tr>
+          <tr class="table-danger">
+            <td>
+              <h5><b>University name</b></h5>
+              <h6> {{studentData.university}} </h6>
+            </td>
+            <td>
+              <h5><b>Course Type</b> </h5>
+              <h6>{{studentData.courseType}} </h6>
+            </td>
+            <td>
+              <h5><b>Student Academic Year:</b></h5>
+              <h6> {{studentData.year}} </h6>
+            </td>
+          </tr>
+          <tr class="table-info">
+            <td>
+              <h5><b>Student Academic Semester:</b></h5>
+              <h6> {{studentData.semester}} </h6>
+            </td>
+            <td>
+              <h5><b>Student Project Interest:</b></h5>
+              <h6> {{studentData.lookingProject}} </h6>
+            </td>
+            <td>
+              <h5><b>Student Project Type Interest:</b></h5>
+              <h6> {{studentData.projectType}} </h6>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <h6 >{{studentData.coverLetter}} </h6>
+        <br>
+        <h5 class="card-title text-info">Contact Details</h5>
+        <h6><b>Student Email:</b> {{studentData.email}} </h6>
+        <h6><b>Student Phone:</b> {{studentData.phone}} </h6>
+      </div>
+    </div>
+  </div>
+
+
+  

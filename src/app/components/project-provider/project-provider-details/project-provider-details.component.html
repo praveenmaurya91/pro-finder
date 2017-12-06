@@ -1,0 +1,64 @@
+<div class="card-header">
+  <h4> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Add Your Details</h4>
+</div><br><br>
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/project-provider-dashboard" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard</a>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<div class="card form-container container">
+  <div class="card-block">
+    <form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
+      <!--First Name-->
+      <div class="form-group 6">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control txt " formControlName="firstName">
+        <div class="alert" *ngIf="!rForm.controls['firstName'].valid && rForm.controls['firstName'].touched"> First name is required</div>
+      </div>
+      <!--Last Name-->
+      <div class="form-group ">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control txt " formControlName="lastName">
+        <div class="alert" *ngIf="!rForm.controls['lastName'].valid && rForm.controls['lastName'].touched"> Last Name is required</div>
+      </div>
+      <!--Email-->
+      <div class="form-group ">
+        <label for="email">Email</label>
+        <input type="text" class="form-control txt " formControlName="email">
+        <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched"> Email is required</div>
+      </div>
+      <!--Phone No.-->
+      <div class="form-group ">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control txt " formControlName="phone">
+        <div class="alert" *ngIf="!rForm.controls['phone'].valid && rForm.controls['phone'].touched"> Phone is required</div>
+      </div>
+      <!--organization-->
+      <div class="form-group ">
+        <label for="organization">Organization</label>
+        <input type="text" class="form-control txt " formControlName="organization">
+        <div class="alert" *ngIf="!rForm.controls['organization'].valid && rForm.controls['organization'].touched">  Organization is required</div>
+      </div>
+      <!--Position-->
+      <div class="form-group ">
+        <label for="position">Position</label>
+        <input type="text" class="form-control txt " formControlName="position">
+        <div class="alert" *ngIf="!rForm.controls['position'].valid && rForm.controls['position'].touched">Position is required</div>
+      </div>
+        <!--Expertise-->
+        <div class="form-group">
+          <label for="expertise">Expertise/ Interest</label> <br>
+          <textarea placeholder="Please wite here where you are expertise...." rows="6" formControlName="expertise" class="form-control txt "> </textarea>
+          <div class="alert" *ngIf="!rForm.controls['expertise'].valid && rForm.controls['expertise'].touched">Expertise is required</div>
+        </div>
+      <input type="submit" class="btn btn-primary btn-block basic-btn" value="Submit" [disabled]="!rForm.valid">
+    </form>
+  </div>
+</div>
+
+
+

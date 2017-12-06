@@ -1,0 +1,99 @@
+[debug] [2017-12-01T14:28:05.115Z] ----------------------------------------------------------------------
+[debug] [2017-12-01T14:28:05.115Z] Command:       D:\Program File\Node JS\node.exe C:\Users\Praveen\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2017-12-01T14:28:05.115Z] CLI Version:   3.15.3
+[debug] [2017-12-01T14:28:05.115Z] Platform:      win32
+[debug] [2017-12-01T14:28:05.115Z] Node Version:  v8.4.0
+[debug] [2017-12-01T14:28:05.115Z] Time:          Sat Dec 02 2017 00:28:05 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-01T14:28:05.115Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-01T14:28:05.127Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-01T14:28:05.127Z] > authorizing via signed-in user
+[debug] [2017-12-01T14:28:05.131Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-01T14:28:05.131Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/kENGfoMrQK5abhNKtiPW5Ll7Rx81OIEawRT_Bd716pU',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Dec 02 2017 00:28:05 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-01T14:28:05.586Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-01T14:28:05.606Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/profinder-2a8df  
+ Sat Dec 02 2017 00:28:05 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-01T14:28:06.891Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-01T14:28:06.891Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/profinder-2a8df/tokens  
+ Sat Dec 02 2017 00:28:06 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-01T14:28:07.771Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'profinder-2a8df'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2017-12-01T14:28:09.706Z] >>> HTTP REQUEST PUT https://profinder-2a8df.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Sat Dec 02 2017 00:28:09 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-01T14:28:13.553Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database profinder-2a8df is valid
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2017-12-01T14:28:21.582Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/profinder-2a8df/uploads/-L-HT_8LjUZojUzAZQvQ?fileCount=18&message=  
+ Sat Dec 02 2017 00:28:21 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-01T14:38:07.421Z] Error: write ECONNRESET
+    at _errnoException (util.js:1041:11)
+    at WriteWrap.afterWrite [as oncomplete] (net.js:858:14)
+[error] 
+[error] Error: Server Error. write ECONNRESET
+[debug] [2017-12-02T04:05:01.802Z] ----------------------------------------------------------------------
+[debug] [2017-12-02T04:05:01.806Z] Command:       D:\Program File\Node JS\node.exe C:\Users\Praveen\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2017-12-02T04:05:01.807Z] CLI Version:   3.15.3
+[debug] [2017-12-02T04:05:01.807Z] Platform:      win32
+[debug] [2017-12-02T04:05:01.807Z] Node Version:  v8.4.0
+[debug] [2017-12-02T04:05:01.809Z] Time:          Sat Dec 02 2017 14:05:01 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-02T04:05:01.809Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-12-02T04:05:01.848Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-12-02T04:05:01.848Z] > authorizing via signed-in user
+[debug] [2017-12-02T04:05:01.850Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-12-02T04:05:01.851Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/kENGfoMrQK5abhNKtiPW5Ll7Rx81OIEawRT_Bd716pU',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Dec 02 2017 14:05:01 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-02T04:05:02.320Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-02T04:05:02.331Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/profinder-2a8df  
+ Sat Dec 02 2017 14:05:02 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-02T04:05:03.673Z] <<< HTTP RESPONSE 200
+[debug] [2017-12-02T04:05:03.674Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/profinder-2a8df/tokens  
+ Sat Dec 02 2017 14:05:03 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-02T04:05:12.110Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'profinder-2a8df'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2017-12-02T04:05:13.210Z] >>> HTTP REQUEST PUT https://profinder-2a8df.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Sat Dec 02 2017 14:05:13 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-02T04:05:14.672Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database profinder-2a8df is valid
+[info] i  hosting: preparing dist directory for upload...
+[debug] [2017-12-02T04:05:30.273Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/profinder-2a8df/uploads/-L-KO_L7DeE7TQfiulrQ?fileCount=18&message=  
+ Sat Dec 02 2017 14:05:30 GMT+1000 (E. Australia Standard Time)
+[debug] [2017-12-02T04:16:50.198Z] Error: socket hang up
+    at createHangUpError (_http_client.js:345:15)
+    at TLSSocket.socketOnEnd (_http_client.js:437:23)
+    at emitNone (events.js:110:20)
+    at TLSSocket.emit (events.js:207:7)
+    at endReadableNT (_stream_readable.js:1059:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: Server Error. socket hang up

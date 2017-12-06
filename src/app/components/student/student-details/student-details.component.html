@@ -1,0 +1,158 @@
+<div class="card-header">
+  <h4> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Add Your Details</h4>
+</div><br>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/student-dashboard" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard</a>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<div class="card form-container container">
+  <div class="card-block">
+    <form [formGroup]="rForm"  (ngSubmit)="onSubmit(rForm.value)">  <!--novalidate #f="ngForm"-->
+      <!--First Name-->
+      <div class="form-group 6">
+        <label for="firstName" >First Name</label>
+        <input type="text" class="form-control txt "  formControlName="firstName" >
+        <div class="alert" *ngIf="!rForm.controls['firstName'].valid && rForm.controls['firstName'].touched"> First name is required</div>
+      </div>
+      <!--Last Name-->
+      <div class="form-group ">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control txt " formControlName="lastName">
+        <div class="alert" *ngIf="!rForm.controls['lastName'].valid && rForm.controls['lastName'].touched"> Last Name is required</div>
+      </div>
+      <!--Email--> 
+      <div class="form-group ">
+        <label for="email">Email</label>
+        <input type="text" class="form-control txt " formControlName="email">
+        <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched"> Email is required</div>       
+      </div>  
+      <!--Phone No.-->
+      <div class="form-group ">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control txt " formControlName="phone">
+        <div class="alert" *ngIf="!rForm.controls['phone'].valid && rForm.controls['phone'].touched"> Phone is required</div>      
+      </div>
+      <!--University-->
+      <div class="form-group ">
+        <label for="university">University</label>
+        <input type="text" class="form-control txt " formControlName="university">
+        <div class="alert" *ngIf="!rForm.controls['university'].valid && rForm.controls['university'].touched"> University is required</div>    
+      </div>
+      <!--Status-->
+      <div class="form-group ">
+        <label for="educationStatus">Education Status</label> 
+         <select class="form-control " formControlName="educationStatus">
+          <option value="">Please select Education Status</option>
+          <option *ngFor="let status of  students.educationStatus" [value]="status">
+            {{status}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['educationStatus'].valid && rForm.controls['educationStatus'].touched"> Education Status is required</div>     
+      </div>
+      <!--Course Type-->
+      <div class="form-group ">
+        <label for="status">Course Type</label>
+        <select class="form-control" formControlName="courseType">
+          <option value="">Please select your Course</option>
+          <option *ngFor="let course of  students.courseType" [value]="course">
+            {{course}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['courseType'].valid && rForm.controls['courseType'].touched"> Course is required</div>    
+      </div>
+      <!--Major-->
+      <div class="form-group ">
+        <label for="major">Major</label>
+        <select class="form-control" formControlName="major" >
+          <option value="">Please select your Major</option>
+          <option *ngFor="let major of  students.major" [value]="major">
+            {{major}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['major'].valid && rForm.controls['major'].touched"> Major is required</div>     
+      </div>
+      <!--Year-->
+      <div class="form-group ">
+        <label for="year">Year</label>
+        <select class="form-control" formControlName="year">
+          <option value="">Please select your current Year</option>
+          <option *ngFor="let year of  students.year" [value]="year">
+            {{year}}
+          </option>
+        </select>      
+      </div>
+      <!--Semester-->
+      <div class="form-group ">
+        <label for="semester">Semester</label>
+        <select class="form-control" formControlName="semester">
+          <option value="">Please select your current Semester</option>
+          <option *ngFor="let semester of  students.semester" [value]="semester">
+            {{semester}}
+          </option>
+        </select>     
+      </div>
+      <!--skills-->
+      <div class="form-group ">
+        <label for="skills">Skills</label>
+        <input type="text" placeholder="Skills 1" class="form-control txt" formControlName="skill_1">
+        <div class="alert" *ngIf="!rForm.controls['skill_1'].valid && rForm.controls['skill_1'].touched"> Atleast one skill is required</div>
+        <input type="text" placeholder="Skills 2" class="form-control txt" formControlName="skill_2">
+        <input type="text" placeholder="Skills 3" class="form-control txt" formControlName="skill_3">
+        <input type="text" placeholder="Skills 4" class="form-control txt" formControlName="skill_4">      
+      </div>
+      
+    
+      <!--Project Looking for-->
+      <div class="form-group ">
+        <label for="lookingProject">What kind of project you are looking for</label>
+        <select class="form-control" formControlName="lookingProject">
+          <option value="">Please select your choice</option>
+          <option *ngFor="let lookingProject of  students.lookingProject" [value]="lookingProject">
+            {{lookingProject}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['lookingProject'].valid && rForm.controls['lookingProject'].touched"> This field is required</div>
+      </div>
+      <!--Project Type-->
+      <div class="form-group ">
+        <label for="projectType">Project Type</label>
+        <select class="form-control" formControlName="projectType">
+          <option value="">Please select your choice</option>
+          <option *ngFor="let projectType of  students.projectType" [value]="projectType">
+            {{projectType}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['projectType'].valid && rForm.controls['projectType'].touched"> This field is required</div>
+      </div>
+        <!--Visa Status-->
+        <div class="form-group ">
+          <label for="visaStatus">Visa Status</label>
+          <select class="form-control" formControlName="visaStatus">
+          <option value="">Please select your Visa Status</option>
+          <option *ngFor="let visaStatus of  students.visaStatus" [value]="visaStatus">
+            {{visaStatus}}
+          </option>
+        </select>
+          <div class="alert" *ngIf="!rForm.controls['visaStatus'].valid && rForm.controls['visaStatus'].touched"> This field is required</div>
+        </div>
+      <!--Resume-->
+      <div class="form-group">
+        <label for="skills">Cover Letter</label> <br>
+        <textarea placeholder="Please wite your cover letter here...." rows="6" formControlName="coverLetter" class="form-control txt "> </textarea>
+        <div class="alert" *ngIf="!rForm.controls['coverLetter'].valid && rForm.controls['coverLetter'].touched"> Cover Letter is required</div>
+      </div>
+      <input type="submit" class="btn btn-primary btn-block basic-btn" value="Submit" [disabled]="!rForm.valid">
+    </form>
+  </div>
+</div>
+
+
+
+
+

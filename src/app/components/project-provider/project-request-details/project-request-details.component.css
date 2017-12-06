@@ -1,0 +1,12 @@
+.card-header{
+    background: #78949C;
+    color:white;
+    text-align: center;
+}
+.card-body{
+     background: rgba(236, 236, 236, 0.73);
+    
+}
+.card-title{
+    text-align: center;
+}

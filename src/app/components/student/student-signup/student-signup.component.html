@@ -1,0 +1,17 @@
+<div class="form-container">
+  <a routerLink="/student-login" id="goback"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go back</a>
+  <h2>Student Register</h2>
+
+  <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+
+  <form (submit)="onSubmit()">
+
+    <input type="text" placeholder="Email address.." [(ngModel)]="email" name="email" class="txt" required>
+    <input *ngIf="!correctPassword" type="password" placeholder="Password" [(ngModel)]="password" name="password" class="txt"
+      required>
+    <input *ngIf="!correctPassword" type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword"
+      class="txt" required>
+    <button type="submit" class="basic-btn">Sign Up</button>
+
+  </form>
+</div>

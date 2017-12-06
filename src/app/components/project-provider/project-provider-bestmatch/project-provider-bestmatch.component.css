@@ -1,0 +1,24 @@
+.card-header{
+    background: #78949C;
+    color:white;
+    text-align: center;
+}
+
+.card-data{
+    
+       background: rgba(240, 240, 245, 0.73);
+     text-align: center;
+}
+
+.name{
+     color:white;
+     text-align: center;
+}
+
+.text-filter{
+    color:white;
+}
+.filter{
+    color:white;
+}
+

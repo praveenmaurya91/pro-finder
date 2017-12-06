@@ -1,0 +1,37 @@
+<div class="card-header">
+  <h1 class="title"><i class="fa fa-info-circle" aria-hidden="true"></i> Project Details</h1>
+</div><br>
+
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/student-dashboard" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard</a>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<!--Card-->
+<div class="card" *ngIf="post">
+  <!--Card content-->
+  <div class="card-body">
+    <div class="card-block">
+      <!--Title-->
+      <h4 class="card-title text-info"><i>{{post.projectName}}</i></h4>
+      <!--Text-->
+      <p class="card-text">{{post.projectDescription}}</p>
+      <h6><b>Required Skills: </b>{{post.projectRequiredSkill_1}}, {{post.projectRequiredSkill_2}}, {{post.projectRequiredSkill_3}}, {{post.projectRequiredSkill_4}}</h6>
+      <h6><b>Required Major:</b> {{post.studentMajor}} </h6>
+      <h6><b>Required Student Year: </b> {{post.studentYear}} </h6>
+      <h6><b>Required Student Semester: </b> {{post.studentSemester}} </h6>
+      <h6><b>Project Duration: </b> {{post.projectDuration}}</h6>
+      <h6><b>Project Type: </b> {{post.projectType}}</h6>
+      <h6><b>Project Location: </b> {{post.projectLocation}}</h6>
+      <h6><b>Paid or Unpaid: </b> {{post.paidOrUnpaid}}</h6>
+    </div>
+    <br>
+    <div class="card-block">
+      <button (click)="onSubmit()" class="btn btn-primary btn-block">Apply</button>
+    </div>
+  </div>
+</div>

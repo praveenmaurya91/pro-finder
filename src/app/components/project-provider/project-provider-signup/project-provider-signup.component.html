@@ -1,0 +1,12 @@
+<div class="form-container">
+  <a routerLink="/project-provider-login" id="goback"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go back</a>
+  <h2>Project Provider Register</h2>
+  <form (submit)="onSubmit()">
+    <input type="text" placeholder="Email address.." [(ngModel)]="email" name="email" class="txt" required>
+    <input *ngIf="!correctPassword" type="password" placeholder="Password" [(ngModel)]="password" name="password" class="txt"
+      required>
+    <input *ngIf="!correctPassword" type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword"
+      class="txt" required>
+    <button type="submit" class="basic-btn">Sign Up</button>
+  </form>
+</div>

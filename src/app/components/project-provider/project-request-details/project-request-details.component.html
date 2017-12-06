@@ -1,0 +1,40 @@
+<div class="card-header">
+  <h1 class="title"><i class="fa fa-info-circle" aria-hidden="true"></i> Student Details</h1>
+</div><br>
+
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/project-provider-request" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back </a>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<!--Card-->
+<div class="card" *ngIf="students">
+  <!--Card content-->
+  <div class="card-body">
+    <div class="card-block">
+      <!--Text-->
+      <h1 class="card-title text-primary"><i>{{students.firstName}} {{students.lastName}}</i></h1>
+      <h6><b>Major:</b> {{students.major}}</h6>
+      <h6><b>Skills:</b> {{students.skill_1}}, {{students.skill_2}}, {{students.skill_3}}, {{students.skill_4}}</h6>
+      <h6><b>Education Status:</b> {{students.educationStatus}} </h6>
+      <h6><b>University name:</b> {{students.university}} </h6>
+      <h6><b>Course Type:</b> {{students.courseType}} </h6>
+      <h6><b>Student Academic Year:</b> {{students.year}} </h6>
+      <h6><b>Student Academic Semester:</b> {{students.semester}} </h6>
+      <h6><b>Student Project Interest:</b> {{students.lookingProject}} </h6>
+      <h6><b>Student Project Type Interest:</b> {{students.projectType}} </h6>
+      <h6><b>Student current visa status:</b> {{students.visaStatus}} </h6>
+      <h6><b>Student cover Letter:</b>  </h6>
+      <h6>{{students.coverLetter}} </h6>
+      <br>
+      <h5 class="card-title text-info">Contact Details</h5>
+      <h6><b>Student Email:</b> {{students.email}} </h6>
+      <h6><b>Student Phone:</b> {{students.phone}} </h6>
+    </div>
+    <br>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+h1 { 
+ padding:1em;
+  text-align:center;
+   color: #3B8598;
+    font-size:5em;
+}
+
+#lock {
+    width:39%;
+    margin: 2em auto 0.2em auto;
+    display:block;
+}
+

@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <button class="navbar-brand">ProFinder</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li  *ngIf="isLoggedIn && studentLoggedIn" class="nav-item active">
+              <a class="nav-link"  routerLink="/student-dashboard"><i class="fa fa-home" aria-hidden="true"></i> Dashboard </a>
+            </li>
+            <li *ngIf="isLoggedIn && !studentLoggedIn" class="nav-item active">
+              <a class="nav-link" routerLink="/project-provider-dashboard"><i class="fa fa-home" aria-hidden="true"></i> Dashboard </a>
+            </li>
+          </ul>
+        
+          <ul class="navbar-nav ml-auto">
+       
+            <li *ngIf="isLoggedIn && !studentLoggedIn" class="nav-item">
+              <a class="nav-link" routerLink="/project-provider-post"><i class="fa fa-plus-circle" aria-hidden="true"></i> Post New Project</a>
+            </li>
+          
+              <li class="dropdown nav-item" *ngIf="isLoggedIn">
+                <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" ><i class="fa fa-user-circle-o" aria-hidden="true"></i>  {{loggedInUser}} <span class="caret"></span></a>
+                
+                <ul class="dropdown-menu  bg-light">
+                  <li *ngIf="isLoggedIn && !studentLoggedIn" class="nav-link">
+                    <a routerLink="/project-provider-request"><i class="fa fa-bell" aria-hidden="true"></i> Project Request</a>
+                  </li>
+                  <li *ngIf="isLoggedIn && studentLoggedIn" class="nav-link">
+                    <a  routerLink="/student-details"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Details</a>
+                  </li>
+                  <li *ngIf="isLoggedIn && !studentLoggedIn" class="nav-link">
+                    <a  routerLink="/project-provider-details"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Details</a>
+                  </li>
+                  <li class="divider nav-item"></li>
+                  <li *ngIf="isLoggedIn" class="nav-link">
+                    <a  href="" (click)="onLogoutClick()"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a>
+                  </li>
+                  <li class="divider"></li>
+                </ul>
+              </li>
+          </ul>
+        </div>
+  </div>
+</nav>
+<br><br>

@@ -1,0 +1,97 @@
+<div class="card-header">
+  <h1 class="title"><i class="fa fa-bell" aria-hidden="true"></i> Project Request</h1>
+</div>
+<br><br>
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/project-provider-dashboard" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard</a>
+  </div>
+</div>
+<br>
+<div>
+  <button type="button" routerLink="/project-request-bestmatch" class="btn btn-primary btn-lg active">View Best Match</button> 
+</div>
+<br>
+<!--filter-->
+<!--Filters-->
+<!--
+<div class="card">
+  <div class="card-body bg-info">
+    <h4 class="filter">Filters</h4>
+    <div class="row">
+      <div class="col-md-3">
+        <h6 class="text-filter">Major</h6>
+        <select [(ngModel)]="studentMajor" (change)="filterExact('studentMajor', studentMajor)">
+      <option value="Computer Science">Computer Science</option>
+      <option value="Data Science">Data Science</option>
+      <option value="Business Process Management">Buisness Process Management</option> 
+      <option value="Networking">Networking</option>
+      <option value="Security">Security</option>
+     </select>
+        <button class="btn btn-danger" *ngIf="studentMajor" (click)="removeFilter('studentMajor')">
+       Remove filter
+     </button>
+      </div>
+      <div class="col-md-3">
+        <h6 class="text-filter">Project Type</h6>
+        <select placeholder="projectType" [(ngModel)]="projectType" (change)="filterExact('projectType', projectType)">
+       <option value="Development">Development</option>
+       <option value="Research">Research</option>
+       <option value="Literature Review">Literature Review</option> 
+      </select>
+        <button class="btn btn-danger" *ngIf="projectType" (click)="removeFilter('projectType')">
+        Remove filter
+      </button>
+      </div>
+      <div class="col-md-3">
+        <h6 class="text-filter">Paid or Unpaid</h6>
+        <select [(ngModel)]="paidOrUnpaid" (change)="filterExact('paidOrUnpaid', paidOrUnpaid)">
+       <option value="Paid">Paid</option>
+       <option value="Unpaid">Unpaid</option>
+      </select>
+        <button class="btn btn-danger" *ngIf="paidOrUnpaid" (click)="removeFilter('paidOrUnpaid')">
+        Remove filter
+      </button>
+      </div>
+      <div class="col-md-3">
+        <h6 class="text-filter">Skills</h6>
+        <input type="Text" [(ngModel)]="projectRequiredSkill_1" (change)="filterExact('projectRequiredSkill_1', projectRequiredSkill_1)">
+        <button class="btn btn-danger" *ngIf="projectRequiredSkill_1" (click)="removeFilter('projectRequiredSkill_1')">
+        Remove filter
+      </button>
+      </div>
+      <div class="col-md-3">
+        <h6 class="text-filter">Project Location</h6>
+        <input type="Text" [(ngModel)]="projectLocation" (change)="filterExact('projectLocation', projectLocation)">
+        <button class="btn btn-danger" *ngIf="projectLocation" (click)="removeFilter('projectLocation')">
+        Remove filter
+      </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<!--Filter end-->
+<!--filter end-->
+
+<!--Card-->
+<div class="card" *ngFor="let request of projectRequestDetails" >
+  <!--Card content-->
+  <div class="card-body card-data bg-info">
+    <div class="card-block">
+      <!--Title-->
+      <h4 class="card-title">{{request.firstName}} {{request.lastName}}</h4>
+      <!--Text-->
+      <h6><b>Project Name: {{request.projectName}}</b></h6>
+      <h6> </h6>
+      <h6><b>Student major:</b> {{request.major}}</h6>
+    </div>
+    <br>
+    <div class="card-block">
+     <a [routerLink]="['/project-request-details/'+request.$key]" class="btn btn-danger">View Student Details</a>
+    </div>
+  </div>
+</div>
+<br>
+<!--/.Card-->

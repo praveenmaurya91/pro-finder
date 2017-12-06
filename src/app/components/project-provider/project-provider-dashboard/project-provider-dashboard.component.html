@@ -1,0 +1,73 @@
+<div class="card-header">
+    <h1 class="title"><i class="fa fa-home" aria-hidden="true"></i> Project Provider Dashboard</h1>
+</div><br>
+<!--Filters-->
+<div class="card">
+<div class="card-body bg-info">
+  <h4 class="filter">Filters</h4>
+   <div class="row">
+    <div class="col-md-3">
+     <h6 class="text-filter">Major</h6>
+     <select [(ngModel)]="major" (change)="filterExact('major', major)">
+      <option value="Computer Science">Computer Science</option>
+      <option value="Data Science">Data Science</option>
+      <option value="Business Process Management">Buisness Process Management</option> 
+      <option value="Networking">Networking</option>
+      <option value="Security">Security</option>
+     </select>
+     <button class="btn btn-danger" *ngIf="major" (click)="removeFilter('major')">
+       Remove filter
+     </button>
+    </div>
+    <div class="col-md-3">
+     <h6 class="text-filter">Course Type</h6>
+      <select  placeholder="Course Type" [(ngModel)]="courseType" (change)="filterExact('courseType', courseType)">
+       <option value="Bachelor">Bachelor</option>
+       <option value="Master">Master</option>
+       <option value="PHD">PHD</option> 
+      </select>
+      <button class="btn btn-danger" *ngIf="courseType" (click)="removeFilter('courseType')">
+        Remove filter
+      </button>
+    </div>
+    <div class="col-md-3">
+     <h6 class="text-filter">Education Status</h6>
+      <select [(ngModel)]="educationStatus" (change)="filterExact('educationStatus', educationStatus)">
+       <option value="Studying">Studying</option>
+       <option value="Completed">Completed</option>
+      </select>
+      <button class="btn btn-danger" *ngIf="educationStatus" (click)="removeFilter('educationStatus')">
+        Remove filter
+      </button>
+    </div>
+    <div class="col-md-3">
+        <h6 class="text-filter">Skills</h6>
+        <input type="Text" [(ngModel)]="skill_1" (change)="filterExact('skill_1', skill_1)">
+        <button class="btn btn-danger" *ngIf="skill_1" (click)="removeFilter('skill_1')">
+        Remove filter
+      </button>
+    </div>
+</div>
+</div>
+</div>
+<br>
+<!--Filter end-->
+<!--Card body-->
+<div class="card" *ngFor="let students of filteredStudents">
+    <!--Card content-->
+    <div class="card-body card-data">
+        <div class="card-block">
+            <!--Title-->
+            <h4 class="card-title">Student Name: {{students.firstName}} {{students.lastName}}</h4>
+            <!--Text-->
+            <h6><b>Major:</b> {{students.major}}</h6>
+            <h6><b>Skills:</b> {{students.skill_1}}, {{students.skill_2}}, {{students.skill_3}}, {{students.skill_4}}</h6>
+            <h6><b>Education Status:</b> {{students.educationStatus}} </h6>
+        </div>
+        <br>
+        <div class="card-block">
+            <a routerLink="/student-data" [routerLink]="['/student-data/'+students.$key]" class="btn btn-primary">View</a>
+        </div>
+    </div>
+</div>
+<br>

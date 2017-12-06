@@ -1,0 +1,119 @@
+<div class="card-header">
+  <h2 class="title"><i class="fa fa-plus-circle" aria-hidden="true"></i> Post a New Project</h2>
+</div><br>
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/project-provider-dashboard" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard</a>
+  </div>
+  <div class="col-md-6">
+
+  </div>
+</div>
+
+<div class="card form-container container">
+ 
+  <div class="card-block">
+    <form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
+      <!--Project Name-->
+      <div class="form-group 6">
+        <h3 for="projectName">Choose a name for your project</h3>
+        <input type="text" placeholder="e.g. Design a website for MyBusiness.com"class="form-control txt " formControlName="projectName">
+        <div class="alert" *ngIf="!rForm.controls['projectName'].valid && rForm.controls['projectName'].touched"> Project Name is required</div>
+      </div>
+      <br>
+      <!--Project Description-->
+      <div class="form-group ">
+        <h3 for="projectDescription">Tell us more about your project</h3>
+        <textarea  rows="6" formControlName="projectDescription" class="form-control txt "  placeholder="Describe your project here...."> </textarea>
+        <div class="alert" *ngIf="!rForm.controls['projectDescription'].valid && rForm.controls['projectDescription'].touched"> Project Description is required</div>
+      </div>
+      <br>
+      <!--skills-->
+      <div class="form-group ">
+        <h3 for="skills">What skills are required?</h3>
+        <label>(e.g. Java, HTML, C# and skills should be related to the project requirement)</label>
+        <input type="text" placeholder="Skill 1" class="form-control txt" formControlName="projectRequiredSkill_1">
+        <div class="alert" *ngIf="!rForm.controls['projectRequiredSkill_1'].valid && rForm.controls['projectRequiredSkill_1'].touched"> Atleast one skill is required</div>
+        <input type="text" placeholder="Skills 2" class="form-control txt" formControlName="projectRequiredSkill_2">
+        <input type="text" placeholder="Skills 3" class="form-control txt" formControlName="projectRequiredSkill_3">
+        <input type="text" placeholder="Skills 4" class="form-control txt" formControlName="projectRequiredSkill_4">
+      </div><br>
+      <!--Major-->
+      <div class="form-group ">
+        <h3 for="studentMajor">What Major required?</h3>
+        <label>(hold ctrl or shift (or drag with the mouse) to select more than one)</label>
+        <select class="selectpicker" multiple formControlName="studentMajor">
+          <option value="">Please select the Major</option>
+          <option *ngFor="let studentMajor of  post.studentMajor" [value]="studentMajor">
+            {{studentMajor}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['studentMajor'].valid && rForm.controls['studentMajor'].touched"> Major is required</div>
+      </div><br>
+      <!--Student Year-->
+      <div class="form-group ">
+        <h3 for="studentYear">What Student  year required?</h3>
+        <select class="form-control" formControlName="studentYear">
+          <option value="">Please select student Year</option>
+          <option *ngFor="let studentYear of post.studentYear" [value]="studentYear">
+            {{studentYear}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['studentYear'].valid && rForm.controls['studentYear'].touched">This field is required</div>
+      </div><br>
+      <!--Student Semester-->
+      <div class="form-group ">
+        <h3 for="studentSemester">What Semester Student required?</h3>
+        <select class="form-control" formControlName="studentSemester">
+          <option value="">Please select the Semester</option>
+          <option *ngFor="let studentSemester of  post.studentSemester" [value]="studentSemester">
+            {{studentSemester}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['studentSemester'].valid && rForm.controls['studentSemester'].touched"> Semester is required</div>
+      </div><br>
+      <!--Project Duration-->
+      <div class="form-group ">
+        <h3 for="projectDuration">What is the Project Duration?</h3>
+        <select class="form-control" formControlName="projectDuration">
+          <option value="">Please select the Project Duration</option>
+          <option *ngFor="let projectDuration of  post.projectDuration" [value]="projectDuration">
+            {{projectDuration}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['projectDuration'].valid && rForm.controls['projectDuration'].touched"> Duration is required</div>
+      </div>
+      <!--Project Type-->
+      <div class="form-group ">
+        <h3 for="projectType">What Type of Project?</h3>
+        <select class="form-control" formControlName="projectType">
+        <option value="">Please select the Project Type</option>
+        <option *ngFor="let projectType of  post.projectType" [value]="projectType">
+            {{projectType}}
+          </option>
+        </select>
+        <div class="alert" *ngIf="!rForm.controls['projectType'].valid && rForm.controls['projectType'].touched"> Project type is required</div>
+      </div><br>
+      <!--Project Location-->
+      <div class="form-group 6">
+        <h3 for="projectLocation">Choose the Project Location</h3>
+        <input type="text" placeholder="e.g. Melbourne"class="form-control txt " formControlName="projectLocation">
+        <div class="alert" *ngIf="!rForm.controls['projectLocation'].valid && rForm.controls['projectLocation'].touched"> Project Location is required</div>
+      </div>
+      <br>
+      <!--Project paid or unpaid-->
+      <div class="form-group ">
+        <h3 for="paidOrUnpaid">Project is Paid or Unpaid?</h3>
+        <select class="form-control" formControlName="paidOrUnpaid">
+          <option value="">Please select the value</option>
+          <option *ngFor="let paidOrUnpaid of  post.paidOrUnpaid" [value]="paidOrUnpaid">
+            {{paidOrUnpaid}}
+          </option>
+        </select>
+      <div class="alert" *ngIf="!rForm.controls['paidOrUnpaid'].valid && rForm.controls['paidOrUnpaid'].touched"> This field is required</div>
+      </div><br>
+     <!--Button-->
+      <input type="submit" class="btn btn-primary btn-block basic-btn" value="Post My Project" [disabled]="!rForm.valid">
+    </form>
+  </div>
+</div>

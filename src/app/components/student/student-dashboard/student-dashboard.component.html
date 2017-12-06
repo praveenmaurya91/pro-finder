@@ -1,0 +1,84 @@
+<div class="card-header">
+    <h1 class="title"><i class="fa fa-home" aria-hidden="true"></i> Student Dashboard</h1>
+</div><br>
+
+<!--Filters-->
+<div class="card">
+    <div class="card-body bg-info">
+        <h4 class="filter">Filters</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <h6 class="text-filter">Major</h6>
+                <select [(ngModel)]="studentMajor" (change)="filterExact('studentMajor', studentMajor)">
+      <option value="Computer Science">Computer Science</option>
+      <option value="Data Science">Data Science</option>
+      <option value="Business Process Management">Buisness Process Management</option> 
+      <option value="Networking">Networking</option>
+      <option value="Security">Security</option>
+     </select>
+                <button class="btn btn-danger" *ngIf="studentMajor" (click)="removeFilter('studentMajor')">
+       Remove filter
+     </button>
+            </div>
+            <div class="col-md-3">
+                <h6 class="text-filter">Project Type</h6>
+                <select placeholder="projectType" [(ngModel)]="projectType" (change)="filterExact('projectType', projectType)">
+       <option value="Development">Development</option>
+       <option value="Research">Research</option>
+       <option value="Literature Review">Literature Review</option> 
+      </select>
+                <button class="btn btn-danger" *ngIf="projectType" (click)="removeFilter('projectType')">
+        Remove filter
+      </button>
+            </div>
+            <div class="col-md-3">
+                <h6 class="text-filter">Paid or Unpaid</h6>
+                <select [(ngModel)]="paidOrUnpaid" (change)="filterExact('paidOrUnpaid', paidOrUnpaid)">
+       <option value="Paid">Paid</option>
+       <option value="Unpaid">Unpaid</option>
+      </select>
+                <button class="btn btn-danger" *ngIf="paidOrUnpaid" (click)="removeFilter('paidOrUnpaid')">
+        Remove filter
+      </button>
+            </div>
+            <div class="col-md-3">
+                <h6 class="text-filter">Skills</h6>
+                <input type="Text" [(ngModel)]="projectRequiredSkill_1" (change)="filterExact('projectRequiredSkill_1', projectRequiredSkill_1)">
+                <button class="btn btn-danger" *ngIf="projectRequiredSkill_1" (click)="removeFilter('projectRequiredSkill_1')">
+        Remove filter
+      </button>
+            </div>
+            <div class="col-md-3">
+                <h6 class="text-filter">Project Location</h6>
+                <input type="Text" [(ngModel)]="projectLocation" (change)="filterExact('projectLocation', projectLocation)">
+                <button class="btn btn-danger" *ngIf="projectLocation" (click)="removeFilter('projectLocation')">
+        Remove filter
+      </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<!--Filter end-->
+
+<!--Card-->
+<div class="card" *ngFor="let post of filteredProject">
+    <!--Card content-->
+    <div class="card-body card-data" >
+        <div class="card-block">
+        <!--Title-->
+        <h4 class="card-title">{{post.projectName}}</h4>
+        <!--Text-->
+        <h6><b>Project Description:</b></h6>
+        <h6> {{post.projectDescription}}</h6>
+        <h6><b>Skills Required:</b> {{post.projectRequiredSkill_1}}</h6>
+        </div>
+        <br>
+        <div class="card-block">
+            <a  [routerLink]="['/project-details/'+post.$key]" class="btn btn-primary">View</a>
+        </div>
+    </div>
+</div>
+<br>
+<!--/.Card-->

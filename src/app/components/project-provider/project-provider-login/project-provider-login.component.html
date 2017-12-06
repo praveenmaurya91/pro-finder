@@ -1,0 +1,10 @@
+<div class="form-container">
+    <a routerLink="/" id="goback"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back To Home</a>
+  <h2>Project Provider Login</h2>
+  <form (submit)="onSubmit()">
+    <input type="text" placeholder="Email address.." [(ngModel)]="email" name="email" class="txt" required>
+    <input type="password" placeholder="Password" [(ngModel)]="password" name="password" class="txt" required>
+    <button type="submit" class="basic-btn">Log in</button>
+    <a routerLink="/project-provider-signup" class="alc">Don't have an account?</a>
+  </form>
+</div>
